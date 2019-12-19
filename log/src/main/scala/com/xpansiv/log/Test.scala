@@ -14,7 +14,10 @@ class Test {
 
   @Log
   private [this] def testPrivate(arg: String): String = {
+    println(s"do I expand twice? $arg")
     arg + " : I'm from the private method!"
   }
 
 }
+
+

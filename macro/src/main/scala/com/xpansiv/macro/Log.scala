@@ -24,13 +24,12 @@ object Logger {
           val clazz = c.internal.enclosingOwner.asType.name.toString
 
           q"""
-             $mods def $methodName[..$tpes](...$args): $returnType = {
+             $mods def $methodName[..$tpes](...$args): Option[String] = {
               val t0 = System.nanoTime()
-              println("----> " + $clazz + ": " + ${methodName.toString} + " " + ${args.toString})
+              println("----> " + $clazz + ": " + ${methodName.toString})
               val result = {..$body}
-              println($body)
               val t1 = System.nanoTime()
-              println("<---- " + $clazz + ": " + ${methodName.toString} + " elapsed time: " + (t1 - t0).toDouble / 1000000D + "ms")
+              println("<---- " + $clazz + ": " + ${methodName.toString} + " result: " + result + " elapsed time: " + (t1 - t0).toDouble / 1000000D + "ms")
               result
             }"""
         }

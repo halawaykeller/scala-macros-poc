@@ -13,11 +13,11 @@ class Application {
   val testList2: List[String] =
     List("Renly", "Nymeria", "Burtie", "Pocket", "Rue")
 
-  val res1: List[String] = test.testMethod(testList1)
-  val res2: List[String] = test.testMethod(testList2)
+  val res1 = test.testMethod(testList1)
+  val res2 = test.testMethod(testList2)
 
-  println(res1)
-  println(res2)
+//  println(res1)
+//  println(res2)
 }
 
 object Application extends App {
